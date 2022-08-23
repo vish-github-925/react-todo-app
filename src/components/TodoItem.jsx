@@ -4,6 +4,7 @@ import { FaEdit, FaSave, FaTimes } from "react-icons/fa";
 import { deleteTodo, editTodo } from "../features/todo/todoSlice";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
+import { toast } from "react-toastify";
 const TodoItemDiv = styled.div`
   margin-top: 15px;
   display: flex;
@@ -80,9 +81,17 @@ const TodoItem = ({ todo }) => {
   };
   const onEdit = (e) => {
     e.preventDefault();
-    dispatch(editTodo({ id: todo.id, name: editedTodo }));
-    setIsEdit(false);
-    setEditedTodo("");
+    if (editedTodo.trim() === "") {
+      {
+        toast.error("The todo shouldn't be empty", {
+          position: "bottom-right",
+        });
+      }
+    } else {
+      dispatch(editTodo({ id: todo.id, name: editedTodo }));
+      setIsEdit(false);
+      setEditedTodo("");
+    }
   };
   const onCancel = () => {
     setIsEdit(false);

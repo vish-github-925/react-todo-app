@@ -3,14 +3,15 @@ import AddTodo from "./components/AddTodo";
 import TodoList from "./components/TodoList";
 import { useSelector } from "react-redux";
 import { todoSelector } from "./features/todo/todoSlice";
-
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 function App() {
   const todos = useSelector(todoSelector);
   return (
     <Layout>
       <AddTodo />
-      {console.log(todos)}
       <TodoList todos={todos} />
+      <ToastContainer />
     </Layout>
   );
 }

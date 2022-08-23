@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
 import { addTodo } from "../features/todo/todoSlice";
+import { toast } from "react-toastify";
 const AddTodoDiv = styled.div`
   height: 125px;
   width: 50%;
@@ -67,9 +68,14 @@ const AddTodo = () => {
   };
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addTodo(todoData));
-    setTodoData({ ...todoData, name: "" });
-    e.target.childNodes[0].focus();
+    if (todoData.name.trim() === "") {
+      toast.error("The todo shouldn't be empty");
+    } else {
+      dispatch(addTodo(todoData));
+      setTodoData({ ...todoData, name: "" });
+      e.target.childNodes[0].focus();
+      console.log(err);
+    }
   };
 
   const { name } = todoData;
