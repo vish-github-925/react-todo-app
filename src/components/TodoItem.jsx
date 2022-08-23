@@ -17,7 +17,7 @@ const TodoItemDiv = styled.div`
     2px 2px 5px 1px rgba(22, 0, 0, 0.2), 2px 2px 5px 1px rgba(22, 0, 0, 0.2),
     2px 2px 5px 1px rgba(22, 0, 0, 0.2);
   .item-on-show {
-    height: 40px;
+    min-height: 40px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -39,7 +39,7 @@ const TodoItemDiv = styled.div`
     }
   }
   .item-on-edit {
-    height: 30px;
+    min-height: 30px;
     width: 100%;
     display: flex;
     align-items: center;
@@ -63,6 +63,36 @@ const TodoItemDiv = styled.div`
         padding: 10px;
         background-color: white;
       }
+    }
+  }
+  @media (max-width: 700px) {
+    padding: 5px;
+  }
+  .item-on-show {
+    width: 100%;
+    span {
+      width: 70%;
+    }
+    .btns {
+      width: 30%;
+      margin-left: 0px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 5px;
+      .icon * {
+        height: 15px;
+        width: 15px;
+      }
+    }
+  }
+  .item-on-edit {
+    width: 100%;
+    margin: 0;
+    input{
+      padding: 0;
+      font-size: 10px;
+      font
     }
   }
 `;

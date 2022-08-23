@@ -56,6 +56,15 @@ const AddTodoDiv = styled.div`
       }
     }
   }
+  @media (max-width: 700px) {
+    width: 90%;
+  }
+  input[type="submit"] {
+    width: 15%;
+  }
+  input[type="text"] {
+    width: 80%;
+  }
 `;
 const AddTodo = () => {
   const [todoData, setTodoData] = useState({

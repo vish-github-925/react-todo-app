@@ -15,7 +15,7 @@ const TodoListDiv = styled.div`
     gap: 20px;
   }
   .gridTodos.colTodos {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 45% 45%;
   }
   button {
     height: 30px;
@@ -33,6 +33,11 @@ const TodoListDiv = styled.div`
     margin: 30px 0px;
     &:hover {
       background-color: salmon;
+    }
+  }
+  @media (max-width: 700px) {
+    button {
+      width: max-content;
     }
   }
 `;
