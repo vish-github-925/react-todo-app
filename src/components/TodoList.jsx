@@ -7,19 +7,19 @@ const TodoListDiv = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  width: 80%;
-  margin: 70px auto;
+  width: 100%;
+  margin: 100px auto;
   .gridTodos {
     width: 100%;
     display: grid;
     gap: 20px;
   }
   .gridTodos.colTodos {
-    grid-template-columns: 45% 45%;
+    grid-template-columns: 50% 50%;
   }
   button {
     height: 30px;
-    width: 25%;
+    width: max-content;
     padding: 5px 20px;
     border-radius: 5px;
     outline: none;
@@ -30,12 +30,15 @@ const TodoListDiv = styled.div`
     cursor: pointer;
     display: flex;
     justify-content: center;
-    margin: 30px 0px;
+    margin: 15px 0px;
     &:hover {
       background-color: salmon;
     }
   }
   @media (max-width: 700px) {
+    .gridTodos.colTodos {
+      grid-template-columns: 100%;
+    }
     button {
       width: max-content;
     }

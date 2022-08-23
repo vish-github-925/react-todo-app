@@ -6,13 +6,16 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { toast } from "react-toastify";
 const TodoItemDiv = styled.div`
-  margin-top: 15px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 5px 30px;
+  margin: 3px auto;
+  margin-top: 15px;
+
   min-height: 40px;
+  width: 90%;
   box-shadow: 2px 2px 5px 1px rgba(22, 0, 0, 0.2),
     2px 2px 5px 1px rgba(22, 0, 0, 0.2), 2px 2px 5px 1px rgba(22, 0, 0, 0.2),
     2px 2px 5px 1px rgba(22, 0, 0, 0.2);
@@ -66,6 +69,7 @@ const TodoItemDiv = styled.div`
     }
   }
   @media (max-width: 700px) {
+    width: 90%;
     padding: 5px;
   }
   .item-on-show {
@@ -89,11 +93,6 @@ const TodoItemDiv = styled.div`
   .item-on-edit {
     width: 100%;
     margin: 0;
-    input{
-      padding: 0;
-      font-size: 10px;
-      font
-    }
   }
 `;
 
